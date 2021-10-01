@@ -14,7 +14,35 @@ while true {
     print("Current conditions are \(prediction.condition.description.lowercased()) with a temperature of \(String(format: "%.1f", arguments: [prediction.temperature])) °C.")
     
     print("That's \(prediction.feel.lowercased())!")
+    print("")
+    print("Would you like to see another prediction?")
+    print("Y/N")
+    let No = readLine()!
+    
+    if No == "N"{
+        print("Would you like to see the history?")
+        print("Y/N")
+        let Yes = readLine()!
+        if Yes == "Y" {
+            for weatherp in predictionWeather.predictions {
+                print("")
+                print("History")
+                print("========")
+                print(weatherp.condition.description.lowercased())
+                print(weatherp.feel)
+                print(weatherp.temperature)
+                print("")
 
-    break
+
+            }
+        }
+        
+        else{
+            
+            break
+        }
+    }
+    
+    
 }
 // Show the prediction

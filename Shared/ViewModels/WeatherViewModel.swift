@@ -7,7 +7,7 @@
 
 import Foundation
 
-class WeatherViewModel {
+class WeatherViewModel: ObservableObject {
 
     @Published var predictions: [Prediction] = []
     
