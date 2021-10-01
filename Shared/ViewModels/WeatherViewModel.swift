@@ -7,3 +7,19 @@
 
 import Foundation
 
+class WeatherViewModel {
+
+    @Published var predictions: [Prediction] = []
+    
+    func providePrediction() -> Prediction {
+        
+        let currentPrediction = WeatherPredictionGenerator.getPrediction()
+        
+        // Adds the current prediction to the arrey
+        predictions.append(currentPrediction)
+        
+        return currentPrediction
+    }
+    
+}
+

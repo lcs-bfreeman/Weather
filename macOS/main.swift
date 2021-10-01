@@ -8,9 +8,13 @@
 import Foundation
 
 // Generate a weather prediction
-let prediction = WeatherPredictionGenerator.getPrediction()
+var predictionWeather = WeatherViewModel()
+while true {
+    let prediction = predictionWeather.providePrediction()
+    print("Current conditions are \(prediction.condition.description.lowercased()) with a temperature of \(String(format: "%.1f", arguments: [prediction.temperature])) °C.")
+    
+    print("That's \(prediction.feel.lowercased())!")
 
+    break
+}
 // Show the prediction
-print("Current conditions are \(prediction.condition.description.lowercased()) with a temperature of \(String(format: "%.1f", arguments: [prediction.temperature])) °C.")
-
-print("That's \(prediction.feel.lowercased())!")
