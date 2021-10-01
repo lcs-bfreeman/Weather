@@ -9,24 +9,30 @@ import SwiftUI
 
 struct ContentView: View {
     
+    @ObservedObject var predictionWeather = WeatherViewModel()
+
     @State private var output = ""
     
-    let prediction = WeatherPredictionGenerator.getPrediction()
+    @State var prediction = predictionWeather.providePrediction()
     
     var body: some View {
         
-        Button(action: {
-            print("Prediction button was pressed")
-            output = "Current conditions are \(prediction.condition.description.lowercased()) with a temperature of \(String(format: "%.1f", arguments: [prediction.temperature])) °C."
-        }, label: {
-            Text("Weather Prediction")
-        })
+        VStack {
+            Button(action: {
+                print("Prediction button was pressed")
+                output = "Current conditions are \(prediction.condition.description.lowercased()) with a temperature of \(String(format: "%.1f", arguments: [prediction.temperature])) °C."
+            }, label: {
+                Text("Weather Prediction")
+            })
+            
+            Text("\(output)")
+        }
         
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
+//struct ContentView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ContentView()
+//    }
+//}

@@ -17,6 +17,11 @@
 		D7EC5E3E2705ECA8007C224F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7EC5E3D2705ECA8007C224F /* ContentView.swift */; };
 		D7EC5E402705ECB8007C224F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7EC5E3F2705ECB8007C224F /* Assets.xcassets */; };
 		D7EC5E432705ECB8007C224F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7EC5E422705ECB8007C224F /* Preview Assets.xcassets */; };
+		D7EC5E4727076D85007C224F /* CelsiusTemperatureRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD52705C6CF00BD6434 /* CelsiusTemperatureRange.swift */; };
+		D7EC5E4827076D85007C224F /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD72705C87F00BD6434 /* Prediction.swift */; };
+		D7EC5E4927076D85007C224F /* WeatherCondition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBDB2705CCC400BD6434 /* WeatherCondition.swift */; };
+		D7EC5E4A27076D85007C224F /* WeatherPredictionGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBD92705CC7500BD6434 /* WeatherPredictionGenerator.swift */; };
+		D7EC5E4B27076D85007C224F /* WeatherViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E82BBDF2705D8E300BD6434 /* WeatherViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -242,6 +247,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7EC5E4727076D85007C224F /* CelsiusTemperatureRange.swift in Sources */,
+				D7EC5E4827076D85007C224F /* Prediction.swift in Sources */,
+				D7EC5E4927076D85007C224F /* WeatherCondition.swift in Sources */,
+				D7EC5E4A27076D85007C224F /* WeatherPredictionGenerator.swift in Sources */,
+				D7EC5E4B27076D85007C224F /* WeatherViewModel.swift in Sources */,
 				D7EC5E3E2705ECA8007C224F /* ContentView.swift in Sources */,
 				D7EC5E3C2705ECA8007C224F /* WeatherAppApp.swift in Sources */,
 			);
