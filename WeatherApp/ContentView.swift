@@ -9,18 +9,27 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var predictionWeather = WeatherViewModel()
+    @ObservedObject var viewModel = WeatherViewModel()
 
     @State private var output = ""
     
-    @State var prediction = predictionWeather.providePrediction()
+    @State var feeling: String = ""
+    @State var weatherConditons: String = ""
+    @State var temperatures: Double = 0.0
+
+    
+
     
     var body: some View {
         
         VStack {
             Button(action: {
-                print("Prediction button was pressed")
-                output = "Current conditions are \(prediction.condition.description.lowercased()) with a temperature of \(String(format: "%.1f", arguments: [prediction.temperature])) °C."
+                let newPrediction = viewModel.providePrediction()
+                feeling = newPrediction.feel
+                weatherConditons = newPrediction.condition.description
+                temperatures = newPrediction.temperature
+                
+                output = "Current conditions are \(weatherConditons) with a temperature of \(temperatures) That's \(feeling) °C."
             }, label: {
                 Text("Weather Prediction")
             })
