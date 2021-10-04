@@ -29,14 +29,16 @@ struct ContentView: View {
                 weatherConditons = newPrediction.condition.description
                 temperatures = newPrediction.temperature
                 
-                output = "Current conditions are \(weatherConditons) with a temperature of \(temperatures) That's \(feeling) °C."
+                output = "Current conditions are \(weatherConditons) with a temperature of \(String(format: "%.1f", arguments: [temperatures])) °C. That's \(feeling) °C."
             }, label: {
                 Text("Weather Prediction")
             })
             
             Text("\(output)")
         }
-        
+        .padding()
+        .navigationTitle("Weather")
+
     }
 }
 

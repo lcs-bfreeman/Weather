@@ -14,7 +14,22 @@ struct WeatherAppApp: App {
         
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabView{
+                NavigationView {
+                    ContentView(viewModel: predictionWeather)
+                }
+                .tabItem{
+                    Image(systemName: "cloud.sun")
+                    Text("Weather")
+                }
+                NavigationView {
+                    HistoryView(viewModel: predictionWeather)
+                }
+                .tabItem{
+                    Image(systemName: "clock.fill")
+                    Text("History")
         }
+    }
+}
     }
 }
